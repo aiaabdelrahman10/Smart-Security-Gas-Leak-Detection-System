@@ -54,6 +54,30 @@ This project is an IoT-based Smart Security & Gas Leak Detection System develope
 
 *(Insert Wokwi circuit screenshot here)*
 
+## Running the Node-RED Dashboard
+1. Install Node.js
+Download and install Node.js from:
+https://nodejs.org/⁠�
+Verify the installation:
+node -v
+npm -v
+2. Install Node-RED
+Open Command Prompt and run:
+npm install -g node-red
+3. Start Node-RED
+Run:
+node-red
+When the server starts, you will see a message similar to:
+Server now running at http://127.0.0.1:1880/
+Open your browser and go to:
+http://localhost:1880
+4. Import the Flow
+Click the ☰ Menu (top-right corner).
+Select Import.
+Choose Select a file to import.
+Select the provided flow file (e.g., smartHome.json).
+Click Import.
+
 ## Future Improvements
 
 - Mobile application integration.
