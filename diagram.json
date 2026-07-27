@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "author": "Rana Samir",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -182.4,
+      "left": -52.76,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -128.4,
+      "left": 176.6,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -205.2,
+      "left": 138.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -149.65,
+      "left": 76.8,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -92.05,
+      "left": 86.4,
+      "attrs": { "value": "1000" }
+    },
+    { "type": "wokwi-gas-sensor", "id": "gas1", "top": -141.3, "left": -233, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -53.6,
+      "left": -228.18,
+      "attrs": {}
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 57.6, "left": -183, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -57.6, "left": -87, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": -76.04, "left": -134.4, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": 39.16, "left": -230.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led2:C", "r1:2", "green", [ "v0" ] ],
+    [ "led1:C", "r2:2", "green", [ "v0" ] ],
+    [ "esp:GND.3", "r2:1", "black", [ "h0" ] ],
+    [ "esp:GND.2", "r1:1", "black", [ "v0" ] ],
+    [ "gas1:VCC", "vcc1:VCC", "red", [ "h0", "v56.7" ] ],
+    [ "gas1:GND", "gnd2:GND", "black", [ "h0" ] ],
+    [ "led2:A", "esp:18", "green", [ "v0" ] ],
+    [ "esp:4", "led1:A", "green", [ "h0" ] ],
+    [ "gnd1:GND", "pir1:GND", "black", [ "v0" ] ],
+    [ "pir1:VCC", "vcc2:VCC", "red", [ "v38.4", "h-28.8" ] ],
+    [ "esp:13", "pir1:OUT", "green", [ "h-47.85", "v67.2", "h-86.4" ] ],
+    [ "esp:34", "gas1:AOUT", "green", [ "h-19.05", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
