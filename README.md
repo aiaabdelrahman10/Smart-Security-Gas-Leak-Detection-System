@@ -29,6 +29,7 @@ This project is an IoT-based Smart Security & Gas Leak Detection System develope
 ├── main.py
 ├── diagram.json
 ├── wokwi-project.txt
+├── smartHome
 └── Smart Security & Gas Leak Detection System Presentation.pptx
 ```
 
